@@ -20,6 +20,9 @@ const Read = () => {
         <div className='w-50 border bg-white shadow px-5 pt-3  pb-5 rounded'>
             <h3>Details of User</h3>
             <div className='mb-2'>
+                <strong>Id: {data.id}</strong>
+            </div>
+            <div className='mb-2'>
                 <strong>Name: {data.name}</strong>
             </div>
 
@@ -35,8 +38,8 @@ const Read = () => {
                 <strong>Designation: {data.designation}</strong>
             </div>
 
-           <Link to={`/update/${id}`} className='btn btn-warning '>Edit</Link>
-           <Link to='/' className='btn btn-warning '>Back</Link>
+           <Link to={`/update/${id}`} className='btn btn-outline-success '>Edit</Link>
+           <Link to='/users-list' className='btn btn-outline-primary me-2 ms-3 '>Back</Link>
         </div>
       
     </div>

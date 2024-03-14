@@ -10,7 +10,7 @@ const Login = () => {
 
     const handleSubmit = () => {
         if (email === "admin@gmail.com" && password === "abc@123") {
-            navigate('/user-list');
+            navigate('/users-list');
         } else {
             alert('Invalid Credentials');
         }

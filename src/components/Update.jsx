@@ -31,7 +31,7 @@ setValues(res.data)
         axios.post('http://localhost:3000/users'+id, values)
           .then(result => {
             console.log(result);
-            navigate('/');
+            navigate('/users-list');
           })
           .catch(err => console.log(err));
       };
@@ -40,6 +40,11 @@ setValues(res.data)
     <div className='bg-white border shadow p-3  px-5 pt-3 pb-5 rounded w-50'>
       <h2>Update-Users</h2>
       <form onSubmit={handleUpdate} >
+      <div className='mb-2 '>
+          <label htmlFor='number'><strong>Id:</strong></label>
+          <input type="id" name='number' placeholder='Enter your name' value={values.number}
+            className='form-control rounded-0'   onChange={e => setValues({ ...values, number: e.target.value })} />
+        </div>
         <div className='mb-2 '>
           <label htmlFor='name'><strong>Name:</strong></label>
           <input type="name" name='name' placeholder='Enter your name' value={values.name}
@@ -63,7 +68,7 @@ setValues(res.data)
             />
         </div>
         <button className='btn btn-success'>Update</button>
-        <Link to="/" className='btn btn-secondary ms-3'>Back</Link>
+        <Link to="/users-list" className='btn btn-secondary ms-3'>Back</Link>
       </form>
     </div>
   </div>

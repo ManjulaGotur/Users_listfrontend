@@ -34,7 +34,7 @@ const Home = () => {
   return (
     <div className='d-flex flex-column justify-content-center align-items-center bg-dark vh-100'>
        <h1>Users-Lists</h1>
-      <div className='bg-white rounded w-50 border shadow p-3'>
+      <div className='bg-white rounded w-60 border shadow p-3'>
    
        <div className='d-flex justify-content-end'>
        <Link to="/create" className='btn btn-success'>Add +</Link> 
@@ -43,6 +43,7 @@ const Home = () => {
           <thead>
             <tr>
               <th>ID</th>
+              <th>Images</th>
               <th>Name</th>
               <th>Email</th>
               <th>Designation</th>
@@ -54,17 +55,19 @@ const Home = () => {
             {data.map((d,i) => (
               <tr key={i}>
                  <td>{d.id}</td>
+                 <td><img src={d.image} alt="" width="55px" height="55px"/></td>
                 <td>{d.name}</td>
                 <td>{d.email}</td>
                 <td>{d.designation}</td>
                 <td>{d.phone}</td>
                 <td>
                 
-                  <button> <Link to={`/read/${d.id}`} type="button"   className='btn btn-outline-info'>Read</Link> </button>
-                  <button><Link to={`/update/${d.id}`}  type="button"  className='btn btn-outline-success me-2'>Edit</Link></button>
-                     <button  type="button"   className='btn btn-outline-danger'
-                     onClick={(e)=> handleDelete(d.id)}>Delete</button>
+                  <div className="button d-flex">
+                  <Link to={`/read/${d.id}`} type="button"   className='btn btn-info'>Read</Link> 
+               <Link to={`/update/${d.id}`}  type="button"  className='btn btn-success me-2 ms-2'>Edit</Link>
+                     <button  type="button"   className='btn btn-danger  '  onClick={(e)=> handleDelete(d.id)}>Delete</button>
 
+                  </div>
                 </td>
               </tr>
             ))}

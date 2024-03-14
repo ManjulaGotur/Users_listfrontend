@@ -17,7 +17,7 @@ const Create = () => {
     axios.post('http://localhost:3000/users', values)
       .then(result => {
         console.log(result);
-        navigate('/');
+        navigate('/users-list');
       })
       .catch(err => console.log(err));
   };
@@ -52,7 +52,7 @@ const Create = () => {
               onChange={e => setValues({ ...values, phone: e.target.value })} />
           </div>
           <button className='btn btn-success'>Create</button>
-          <Link to="/" className='btn btn-secondary ms-3'>Back</Link>
+          <Link to="/users-list" className='btn btn-secondary ms-3'>Back</Link>
         </form>
       </div>
     </div>
