@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const Create = () => {
   const [values, setValues] = useState({
+    id:'number',
     name: '',
     email: '',
     phone: '',
@@ -27,12 +28,25 @@ const Create = () => {
       <div className='bg-white border shadow p-3  px-5 pt-3 pb-5 rounded-3 w-50'>
         <h2>Add-Users</h2>
         <form onSubmit={handleSubmit}>
+        <div className='mb-2 '>
+          <label htmlFor='number'><strong>Id:</strong></label>
+          <input type="number" name='id' placeholder='Enter id ' value={values.id}
+            className='form-control rounded-0'   onChange={e => setValues({ ...values, id: e.target.value })} />
+        </div>
           <div className='mb-2 '>
             <label htmlFor='name'className="m-2"><strong>Name:</strong></label>
             <input type="name" name='name' placeholder='Enter your name'
               className='form-control p-2 rounded' value={values.name}
               onChange={e => setValues({ ...values, name: e.target.value })} />
           </div>
+          
+          <div className="fileupload mt-4">
+                    <input className="form-control" type="file" id="formFile"
+                     placeholder="Place image link here" value={values.image} 
+                     onChange={(e) => setValues(e.target.value)} />
+                </div>
+
+
           <div className='mb-2'>
             <label htmlFor='email' className="m-2"><strong>Email:</strong></label>
             <input type="email" name='email' placeholder='Enter your email'  value={values.email}
