@@ -62,7 +62,7 @@ const Home = () => {
           <thead>
             <tr>
               <th>ID</th>
-              <th>Images</th>
+              {/* <th>Images</th> */}
               <th>Name</th>
               <th>Email</th>
               <th>Designation</th>
@@ -74,7 +74,7 @@ const Home = () => {
             {data.map((d, i) => (
               <tr key={i}>
                 <td>{d.id}</td>
-                <td><img src={d.image} alt="" width="55px" height="55px" /></td>
+                {/* <td><img src={d.image} alt="" width="55px" height="55px" /></td> */}
                 <td>{d.name}</td>
                 <td>{d.email}</td>
                 <td>{d.designation}</td>
